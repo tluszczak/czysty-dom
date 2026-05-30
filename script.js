@@ -56,7 +56,7 @@ if (conciergeForm) {
 
         // Simulate high-end service response
         setTimeout(() => {
-            alert('Dziękujemy za kontakt z Pasierowski & Pasierowski. Państwa zgłoszenie zostało przekazane do Marcina Pasierowskiego. Skontaktujemy się w ciągu 2 godzin roboczych.');
+            alert('Dziękujemy za kontakt z Immaculate. Państwa zgłoszenie zostało przekazane do Marcina Pasierowskiego. Skontaktujemy się w ciągu 2 godzin roboczych.');
             conciergeForm.reset();
             submitBtn.innerText = originalText;
             submitBtn.disabled = false;
