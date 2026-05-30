@@ -51,9 +51,9 @@ h1, h2, h3, .brand-main, .section-tag {
 
 .loader-logo {
     color: var(--accent-gold);
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
-    letter-spacing: 10px;
+    letter-spacing: 15px;
 }
 
 .loader-bar {
