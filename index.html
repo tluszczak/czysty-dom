@@ -3,165 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Czysty Dom - Profesjonalne Czyszczenie Tapicerki i Dywanów</title>
+    <title>Pasierowski & Pasierowski | Ekspercka Pielęgnacja Dywanów i Tapicerki</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <a href="#" class="logo">Czysty<span>Dom</span></a>
-                <ul class="nav-links">
-                    <li><a href="#home">Start</a></li>
-                    <li><a href="#about">O nas</a></li>
-                    <li><a href="#pricing">Cennik</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
-                </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
+    <div class="luxury-loader">
+        <div class="loader-content">
+            <h2 class="loader-logo">P&P</h2>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <nav class="container">
+            <a href="#home" class="brand">
+                <span class="brand-main">Pasierowski<span>&</span>Pasierowski</span>
+                <span class="brand-sub">LUXURY TEXTILE CARE</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home">Kolekcja</a></li>
+                <li><a href="#about">Dziedzictwo</a></li>
+                <li><a href="#services">Atelier Usług</a></li>
+                <li><a href="#pricing">Inwestycja</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Przywracamy świeżość Twoim wnętrzom</h1>
-                    <p>Profesjonalne pranie dywanów, wykładzin i tapicerki meblowej z dojazdem do klienta. Używamy tylko bezpiecznych i skutecznych środków.</p>
-                    <div class="hero-btns">
-                        <a href="#pricing" class="btn btn-primary">Zobacz cennik</a>
-                        <a href="#contact" class="btn btn-secondary">Umów termin</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&q=80&w=800" alt="Czysty salon">
-                </div>
+        <!-- Hero: The Art of Cleanliness -->
+        <section id="home" class="hero-luxury">
+            <div class="hero-video-bg">
+                <img src="https://images.unsplash.com/photo-1594904351111-a072f80b1a71?auto=format&fit=crop&q=80&w=1920" alt="Luksusowe wnętrze">
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-text">
-                        <span class="sub-title">O nas</span>
-                        <h2>Twoje meble zasługują na drugie życie</h2>
-                        <p>Jesteśmy małą, rodzinną firmą, która od 5 lat dba o czystość w domach naszych klientów. Specjalizujemy się w usuwaniu trudnych plam, roztoczy i nieprzyjemnych zapachów.</p>
-                        <ul class="features">
-                            <li><i class="fas fa-check-circle"></i> Certyfikowane środki czyszczące</li>
-                            <li><i class="fas fa-check-circle"></i> Nowoczesny sprzęt ekstrakcyjny</li>
-                            <li><i class="fas fa-check-circle"></i> Szybki czas schnięcia</li>
-                            <li><i class="fas fa-check-circle"></i> Bezpłatny dojazd do klienta</li>
-                        </ul>
-                    </div>
-                    <div class="about-stats">
-                        <div class="stat-card">
-                            <h3>500+</h3>
-                            <p>Zadowolonych klientów</p>
-                        </div>
-                        <div class="stat-card">
-                            <h3>1200+</h3>
-                            <p>Wypranych dywanów</p>
-                        </div>
+            <div class="hero-content container">
+                <div class="text-wrapper" data-aos="fade-up" data-aos-duration="1500">
+                    <span class="eyebrow">Definicja Czystości</span>
+                    <h1>Sztuka Pielęgnacji Najszlachetniejszych Tkanin.</h1>
+                    <p>Odkryj tajemnicę metody "Na Wskroś". Przywracamy duszę dywanom orientalnym i tapicerkom, łącząc tradycyjne rzemiosło z nowoczesną technologią.</p>
+                    <div class="cta-group">
+                        <a href="#services" class="btn btn-luxury">Poznaj nasze Atelier</a>
+                        <a href="#contact" class="btn btn-ghost">Zapytaj o wycenę</a>
                     </div>
                 </div>
             </div>
+            <a href="#about" class="scroll-indicator">
+                <span>Eksploruj</span>
+                <div class="line"></div>
+            </a>
         </section>
 
-        <!-- Pricing Section -->
-        <section id="pricing" class="pricing">
+        <!-- Legacy: About P&P -->
+        <section id="about" class="legacy">
             <div class="container">
-                <div class="section-header">
-                    <span class="sub-title">Cennik</span>
-                    <h2>Przejrzyste ceny bez ukrytych kosztów</h2>
-                </div>
-                <div class="price-grid">
-                    <div class="price-card">
-                        <i class="fas fa-couch"></i>
-                        <h3>Tapicerka</h3>
-                        <p class="price">od 80 zł</p>
-                        <ul>
-                            <li>Fotele i pufy</li>
-                            <li>Kanapy i narożniki</li>
-                            <li>Krzesła biurowe</li>
-                        </ul>
+                <div class="legacy-grid">
+                    <div class="legacy-text" data-aos="fade-right">
+                        <span class="section-tag">Nasze Dziedzictwo</span>
+                        <h2>Marcin Pasierowski: Wizja Perfekcji</h2>
+                        <p>Pasierowski & Pasierowski to więcej niż pralnia. To rodzinna manufaktura czystości, w której każdy centymetr tkaniny traktowany jest z nabożnym szacunkiem. Marcin Pasierowski osobiście czuwa nad procesem technologicznym, dbając o zachowanie najwyższych standardów bezpieczeństwa dla Twojego domu i zdrowia.</p>
+                        <p>Specjalizujemy się w dogłębnym praniu wodnym metodą „NA WSKROŚ”, która jako jedyna gwarantuje usunięcie nie tylko plam, ale i niewidocznych gołym okiem drobnoustrojów z głębi runa.</p>
+                        <div class="signature">
+                            <span class="sign-text">Marcin Pasierowski</span>
+                            <span class="sign-title">Owner & Founder</span>
+                        </div>
                     </div>
-                    <div class="price-card featured">
-                        <i class="fas fa-rug"></i>
-                        <h3>Dywany</h3>
-                        <p class="price">od 15 zł<span>/m²</span></p>
-                        <ul>
-                            <li>Dywany syntetyczne</li>
-                            <li>Dywany wełniane</li>
-                            <li>Wykładziny biurowe</li>
-                        </ul>
-                    </div>
-                    <div class="price-card">
-                        <i class="fas fa-car-side"></i>
-                        <h3>Auto Detailing</h3>
-                        <p class="price">od 150 zł</p>
-                        <ul>
-                            <li>Fotele samochodowe</li>
-                            <li>Podłoga i bagażnik</li>
-                            <li>Kompleksowe wnętrze</li>
-                        </ul>
+                    <div class="legacy-visual" data-aos="fade-left">
+                        <div class="visual-container">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800" alt="Proces czyszczenia">
+                            <div class="experience-year">EST 2000</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
+        <!-- Services: The Atelier -->
+        <section id="services" class="atelier">
             <div class="container">
-                <div class="contact-box">
-                    <div class="contact-info">
-                        <h2>Zostańmy w kontakcie</h2>
-                        <p>Masz pytania? Chcesz wycenić niestandardowe zlecenie? Zadzwoń lub napisz!</p>
-                        <div class="contact-details">
-                            <div class="item">
-                                <i class="fas fa-phone"></i>
-                                <span>+48 123 456 789</span>
-                            </div>
-                            <div class="item">
-                                <i class="fas fa-envelope"></i>
-                                <span>kontakt@czystydom.pl</span>
-                            </div>
-                            <div class="item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Warszawa i okolice</span>
-                            </div>
+                <div class="section-header-luxury" data-aos="fade-up">
+                    <span class="section-tag">Atelier Usług</span>
+                    <h2>Kompleksowa Odnowa</h2>
+                </div>
+                <div class="services-luxury-grid">
+                    <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="s-icon"><i class="fas fa-gem"></i></div>
+                        <h3>Dywany Orientalne</h3>
+                        <p>Kąpiel wodna "Na Wskroś" dla wełny, jedwabiu i ręcznie tkanych dzieł sztuki.</p>
+                    </div>
+                    <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="s-icon"><i class="fas fa-couch"></i></div>
+                        <h3>Tapicerka Szlachetna</h3>
+                        <p>Precyzyjna ekstrakcja brudu z sof, foteli i materacy przy użyciu ekologicznych esencji.</p>
+                    </div>
+                    <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="s-icon"><i class="fas fa-shield-virus"></i></div>
+                        <h3>Ozonowanie & Sanityzacja</h3>
+                        <p>Absolutna eliminacja alergenów i zapachów. Bezpieczeństwo potwierdzone standardami medycznymi.</p>
+                    </div>
+                    <div class="service-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="s-icon"><i class="fas fa-droplet-slash"></i></div>
+                        <h3>Ratownictwo Tkanin</h3>
+                        <p>Specjalistyczne osuszanie i przywracanie pierwotnego stanu po zalaniach i awariach.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing: Investment in Quality -->
+        <section id="pricing" class="investment">
+            <div class="container">
+                <div class="investment-card" data-aos="zoom-in">
+                    <div class="card-header">
+                        <h2>Inwestycja w Trwałość</h2>
+                        <p>Ceny są pochodną jakości użytych preparatów i precyzji wykonania.</p>
+                    </div>
+                    <div class="investment-list">
+                        <div class="list-item">
+                            <span class="label">Pranie dywanów standard</span>
+                            <span class="value">od 20 zł / m²</span>
+                        </div>
+                        <div class="list-item">
+                            <span class="label">Pielęgnacja dywanów Premium / Jedwab</span>
+                            <span class="value">od 35 zł / m²</span>
+                        </div>
+                        <div class="list-item">
+                            <span class="label">Restauracja tapicerki meblowej</span>
+                            <span class="value">od 150 zł / moduł</span>
+                        </div>
+                        <div class="list-item">
+                            <span class="label">Ozonowanie pomieszczeń (Terapie)</span>
+                            <span class="value">od 120 zł</span>
                         </div>
                     </div>
-                    <form class="contact-form">
-                        <input type="text" placeholder="Imię i nazwisko" required>
-                        <input type="email" placeholder="E-mail" required>
-                        <textarea placeholder="Twoja wiadomość" rows="5" required></textarea>
-                        <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
+                    <div class="card-note">
+                        <p>* Dojazd na terenie Warszawy i okolic wliczony w cenę przy zamówieniach powyżej 200 zł.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact: Concierge -->
+        <section id="contact" class="concierge">
+            <div class="container">
+                <div class="concierge-wrapper">
+                    <div class="concierge-info" data-aos="fade-right">
+                        <h2>Serwis Konsjerża</h2>
+                        <p>Zarezerwuj termin odbioru Twoich tekstyliów lub zapytaj o indywidualną wycenę. Nasi eksperci są do Twojej dyspozycji.</p>
+                        <div class="contact-links">
+                            <a href="tel:+48608104894" class="c-link"><i class="fas fa-phone-alt"></i> +48 608 104 894</a>
+                            <a href="mailto:info@praniedywanow.pl" class="c-link"><i class="fas fa-envelope"></i> info@praniedywanow.pl</a>
+                            <div class="c-link"><i class="fas fa-map-marker-alt"></i> ul. Wileńska 12/84, Warszawa</div>
+                        </div>
+                    </div>
+                    <form class="concierge-form" data-aos="fade-left">
+                        <div class="input-row">
+                            <input type="text" placeholder="Godność / Nazwisko" required>
+                            <input type="email" placeholder="E-mail" required>
+                        </div>
+                        <input type="tel" placeholder="Numer Telefonu">
+                        <textarea placeholder="Jaką tkaninę możemy dla Ciebie odnowić?" rows="4"></textarea>
+                        <button type="submit" class="btn btn-luxury">Prześlij Zapytanie</button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer-luxury">
         <div class="container">
-            <p>&copy; 2026 CzystyDom. Wszelkie prawa zastrzeżone.</p>
-            <div class="socials">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="brand-main">Pasierowski<span>&</span>Pasierowski</span>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pasierowski & Pasierowski. All rights reserved. Registered owner: Marcin Pasierowski.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
