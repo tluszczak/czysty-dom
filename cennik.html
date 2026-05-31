@@ -9,77 +9,147 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-        <style>
-            .pricing-page { padding-top: 120px; background: var(--light); min-height: 100vh; padding-bottom: 60px; }
-            .table-container { 
-                background: var(--white); 
-                border-radius: 20px; 
-                padding: 40px; 
-                margin: 40px auto; 
-                box-shadow: var(--shadow);
-                max-width: 1000px;
-                overflow: hidden;
-            }
-            .table-responsive {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-            .price-table { width: 100%; border-collapse: collapse; min-width: 500px; }
-            
-            @media (max-width: 768px) {
-                .table-container { padding: 20px 15px; border-radius: 15px; }
-                .pricing-page { padding-top: 100px; }
-                .page-header h2 { font-size: 24px; }
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <nav class="navbar">
-                <div class="container">
-                    <a href="index.html" class="logo">Immaculate<span>.</span></a>
-                    <ul class="nav-links">
-                        <li><a href="index.html#home">Start</a></li>
-                        <li><a href="index.html#about">O nas</a></li>
-                        <li><a href="index.html#pricing">Cennik</a></li>
-                        <li><a href="index.html#contact">Kontakt</a></li>
-                    </ul>
-                    <div class="burger">
-                        <div class="line1"></div>
-                        <div class="line2"></div>
-                        <div class="line3"></div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    
-        <main class="pricing-page">
+    <style>
+        .pricing-page { padding-top: 120px; background: var(--light); min-height: 100vh; padding-bottom: 60px; }
+        .table-container { 
+            background: var(--white); 
+            border-radius: 20px; 
+            padding: 40px; 
+            margin: 20px auto; 
+            box-shadow: var(--shadow);
+            max-width: 1000px;
+            overflow: hidden;
+        }
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .price-table { width: 100%; border-collapse: collapse; min-width: 500px; }
+        .price-table th { 
+            text-align: left; 
+            padding: 20px; 
+            border-bottom: 2px solid #eee; 
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        .price-table td { padding: 15px 20px; border-bottom: 1px solid #f0f0f0; }
+        
+        .category-row td { 
+            background: #f0f9f8; 
+            color: var(--secondary); 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px;
+            font-size: 1rem;
+            padding: 25px 20px;
+            border-bottom: 2px solid var(--primary);
+        }
+        .price-val { font-weight: 700; color: var(--secondary); text-align: right; width: 120px; }
+        .price-unit { color: var(--text-light); font-size: 0.9rem; text-align: left; padding-left: 5px !important; }
+        
+        .page-header { text-align: center; margin-bottom: 20px; }
+        .back-link { 
+            display: inline-flex; 
+            align-items: center; 
+            color: var(--primary); 
+            text-decoration: none; 
+            font-weight: 600; 
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+        .back-link:hover { transform: translateX(-5px); }
+        .back-link i { margin-right: 8px; }
+
+        /* Quick Nav for Mobile */
+        .quick-nav {
+            display: none;
+            position: sticky;
+            top: 80px;
+            background: var(--white);
+            padding: 15px;
+            z-index: 90;
+            overflow-x: auto;
+            white-space: nowrap;
+            border-bottom: 1px solid #eee;
+            margin: 0 -20px 20px -20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .quick-nav a {
+            display: inline-block;
+            padding: 8px 18px;
+            margin-right: 10px;
+            background: var(--light);
+            color: var(--secondary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #eee;
+        }
+        .quick-nav a:hover { border-color: var(--primary); color: var(--primary); }
+
+        @media (max-width: 768px) {
+            .table-container { padding: 20px 15px; border-radius: 15px; }
+            .pricing-page { padding-top: 100px; }
+            .page-header h2 { font-size: 24px; }
+            .quick-nav { display: block; }
+            .price-val { width: 100px; }
+            .category-row td { font-size: 0.9rem; padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
             <div class="container">
-                <a href="index.html#pricing" class="back-link"><i class="fas fa-arrow-left"></i> Powrót do strony głównej</a>
-                
-                <div class="page-header">
-                    <span class="sub-title">Pełna oferta</span>
-                    <h2>Szczegółowy Cennik Usług</h2>
-                </div>
-    
-                <div class="table-container">
-                    <div class="table-responsive">
-                        <table class="price-table">
-                            <thead>
-                                <tr>
-                                    <th>Usługa</th>
-                                    <th style="text-align: right;">Cena</th>
-                                    <th style="text-align: right;">Jednostka</th>
-                                </tr>
-                            </thead>
-                            <tbody id="price-body">
-                                <!-- Ładowane przez JS -->
-                            </tbody>
-                        </table>
-                    </div>
+                <a href="index.html" class="logo">Immaculate<span>.</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Start</a></li>
+                    <li><a href="index.html#about">O nas</a></li>
+                    <li><a href="index.html#pricing">Cennik</a></li>
+                    <li><a href="index.html#contact">Kontakt</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
                 </div>
             </div>
-        </main>
+        </nav>
+    </header>
+
+    <main class="pricing-page">
+        <div class="container">
+            <a href="index.html#pricing" class="back-link"><i class="fas fa-arrow-left"></i> Powrót do strony głównej</a>
+            
+            <div class="page-header">
+                <span class="sub-title">Pełna oferta</span>
+                <h2>Szczegółowy Cennik Usług</h2>
+            </div>
+
+            <nav class="quick-nav" id="quick-nav">
+                <!-- Generowane przez JS -->
+            </nav>
+
+            <div class="table-container">
+                <div class="table-responsive">
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Usługa</th>
+                                <th style="text-align: right;">Cena</th>
+                                <th style="text-align: left; padding-left: 5px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="price-body">
+                            <!-- Ładowane przez JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <footer>
         <div class="container">
             <p>&copy; 2026 Immaculate. Wszelkie prawa zastrzeżone.</p>
@@ -90,6 +160,7 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
     <script>
         async function loadPrices() {
             try {
@@ -97,17 +168,32 @@
                 const data = await response.text();
                 const lines = data.split('\n');
                 const tbody = document.getElementById('price-body');
+                const quickNav = document.getElementById('quick-nav');
                 
+                let catId = 0;
+
                 lines.forEach(line => {
                     const trimmed = line.trim();
                     if (!trimmed) return;
                     
                     if (trimmed.startsWith('#')) {
                         const cat = trimmed.replace(/^#\s*(Kategorie:)?\s*/, '').trim();
+                        catId++;
+                        const id = `cat-${catId}`;
+                        
+                        // Dodaj wiersz kategorii do tabeli
                         const row = document.createElement('tr');
                         row.className = 'category-row';
+                        row.id = id;
                         row.innerHTML = `<td colspan="3">${cat}</td>`;
                         tbody.appendChild(row);
+
+                        // Dodaj link do szybkiej nawigacji
+                        const link = document.createElement('a');
+                        link.href = `#${id}`;
+                        link.textContent = cat;
+                        quickNav.appendChild(link);
+
                     } else if (trimmed.includes('|')) {
                         const [service, price, unit] = trimmed.split('|').map(s => s.trim());
                         const row = document.createElement('tr');
