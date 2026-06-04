@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cennik | Immaculate</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pricing-table-container { padding: 50px 20px; }
+        .pricing-table { width: 100%; max-width: 800px; margin: 0 auto; border-collapse: collapse; }
+        .pricing-table th, .pricing-table td { padding: 15px; border-bottom: 1px solid #ddd; text-align: left; }
+        .pricing-category { background-color: #f4f4f4; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="container">
+            <a href="index.html" class="brand">Immaculate</a>
+        </nav>
+    </header>
+    <main class="container pricing-table-container">
+        <h1>Szczegółowy Cennik</h1>
+        <table class="pricing-table" id="pricing-table">
+            <thead>
+                <tr>
+                    <th>Usługa</th>
+                    <th>Cena</th>
+                </tr>
+            </thead>
+            <tbody id="pricing-body">
+                <!-- Data will be populated here -->
+            </tbody>
+        </table>
+    </main>
+    <script>
+        fetch('prices.txt')
+            .then(response => response.text())
+            .then(data => {
+                const tbody = document.getElementById('pricing-body');
+                const lines = data.split('\n');
+                lines.forEach(line => {
+                    if (line.startsWith('#')) {
+                        const row = document.createElement('tr');
+                        const cell = document.createElement('th');
+                        cell.colSpan = 2;
+                        cell.className = 'pricing-category';
+                        cell.textContent = line.replace('# ', '');
+                        row.appendChild(cell);
+                        tbody.appendChild(row);
+                    } else if (line.trim() !== '') {
+                        const parts = line.split('|');
+                        if (parts.length === 3) {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `<td>${parts[0].trim()}</td><td>${parts[1].trim()} ${parts[2].trim()}</td>`;
+                            tbody.appendChild(row);
+                        }
+                    }
+                });
+            });
+    </script>
+</body>
+</html>
