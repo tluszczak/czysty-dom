@@ -3,56 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cennik | Immaculate</title>
+    <title>Szczegółowy Cennik | Immaculate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .pricing-table-container { padding: 50px 20px; }
-        .pricing-table { width: 100%; max-width: 800px; margin: 0 auto; border-collapse: collapse; }
-        .pricing-table th, .pricing-table td { padding: 15px; border-bottom: 1px solid #ddd; text-align: left; }
-        .pricing-category { background-color: #f4f4f4; font-weight: bold; }
-    </style>
 </head>
 <body>
+    <div class="luxury-loader">
+        <div class="loader-content">
+            <h2 class="loader-logo">IMMACULATE</h2>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
     <header class="main-header">
         <nav class="container">
-            <a href="index.html" class="brand">Immaculate</a>
+            <a href="index.html" class="brand">
+                <span class="brand-main">Immaculate</span>
+                <span class="brand-sub">LUXURY TEXTILE CARE</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Kolekcja</a></li>
+                <li><a href="index.html#about">Dziedzictwo</a></li>
+                <li><a href="index.html#services">Atelier Usług</a></li>
+                <li><a href="index.html#pricing">Inwestycja</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
-    <main class="container pricing-table-container">
-        <h1>Szczegółowy Cennik</h1>
-        <table class="pricing-table" id="pricing-table">
-            <thead>
-                <tr>
-                    <th>Usługa</th>
-                    <th>Cena</th>
-                </tr>
-            </thead>
-            <tbody id="pricing-body">
-                <!-- Data will be populated here -->
-            </tbody>
-        </table>
+
+    <main>
+        <section class="pricing-detail investment">
+            <div class="container">
+                <div class="investment-card" data-aos="zoom-in">
+                    <div class="card-header">
+                        <span class="section-tag">Pełna Transparentność</span>
+                        <h1>Szczegółowy Cennik Usług</h1>
+                        <p>Inwestycja w jakość, która przywraca duszę Twoim tekstyliom.</p>
+                    </div>
+                    
+                    <div id="pricing-content" class="pricing-detail-content">
+                        <!-- Table will be populated here -->
+                    </div>
+
+                    <div class="card-note" style="margin-top: 50px;">
+                        <p>* Powyższe ceny są cenami orientacyjnymi. Ostateczna wycena następuje po oględzinach materiału.</p>
+                        <p>Dojazd na terenie Warszawy i okolic wliczony w cenę przy zamówieniach powyżej 200 zł.</p>
+                        <p><a href="index.html#contact" class="btn btn-luxury">Zarezerwuj termin</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer-luxury">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="brand-main">Immaculate</span>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Immaculate. All rights reserved. Registered owner: Marcin Pasierowski. NIP: 52117114101</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
     <script>
         fetch('prices.txt')
             .then(response => response.text())
             .then(data => {
-                const tbody = document.getElementById('pricing-body');
+                const container = document.getElementById('pricing-content');
                 const lines = data.split('\n');
+                let currentCategory = null;
+                let currentTable = null;
+
                 lines.forEach(line => {
                     if (line.startsWith('#')) {
-                        const row = document.createElement('tr');
-                        const cell = document.createElement('th');
-                        cell.colSpan = 2;
-                        cell.className = 'pricing-category';
-                        cell.textContent = line.replace('# ', '');
-                        row.appendChild(cell);
-                        tbody.appendChild(row);
+                        const catName = line.replace('# ', '').trim();
+                        const header = document.createElement('h3');
+                        header.className = 'pricing-category-title';
+                        header.textContent = catName;
+                        container.appendChild(header);
+                        
+                        currentTable = document.createElement('table');
+                        currentTable.className = 'pricing-detail-table';
+                        container.appendChild(currentTable);
                     } else if (line.trim() !== '') {
                         const parts = line.split('|');
-                        if (parts.length === 3) {
-                            const row = document.createElement('tr');
-                            row.innerHTML = `<td>${parts[0].trim()}</td><td>${parts[1].trim()} ${parts[2].trim()}</td>`;
-                            tbody.appendChild(row);
+                        if (parts.length === 3 && currentTable) {
+                            const row = currentTable.insertRow();
+                            const cell1 = row.insertCell(0);
+                            const cell2 = row.insertCell(1);
+                            cell1.textContent = parts[0].trim();
+                            cell2.textContent = `${parts[1].trim()} ${parts[2].trim()}`;
+                            cell2.className = 'price-value';
                         }
                     }
                 });

@@ -33,6 +33,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Initialize AOS (Animate on Scroll)
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Close menu on link click
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    }
+
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 1200,
