@@ -3,21 +3,27 @@ const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
 const navLinks = document.querySelectorAll('.nav-links li');
 
-burger.addEventListener('click', () => {
-    // Toggle Nav
-    nav.classList.toggle('nav-links-active');
-    nav.classList.toggle('active');
+if (burger && nav) {
+    burger.addEventListener('click', () => {
+        // Toggle Nav
+        nav.classList.toggle('active');
 
-    // Burger Animation
-    burger.classList.toggle('toggle');
-});
-
-// Close menu when link is clicked
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('active');
+        // Burger Animation
+        burger.classList.toggle('toggle');
+        
+        // Prevent body scroll
+        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : 'auto';
     });
-});
+
+    // Close menu when link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            burger.classList.remove('toggle');
+            document.body.style.overflow = 'auto';
+        });
+    });
+}
 
 // Simple Scroll Effect for Navbar
 window.addEventListener('scroll', () => {

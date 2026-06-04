@@ -486,19 +486,31 @@ footer .container {
     .stat-card { padding: 30px 20px; }
     .contact-info, .contact-form { padding: 30px 20px; }
     
+    .burger {
+        display: block;
+    }
+
     .nav-links {
         position: fixed;
         right: -100%;
-        top: 100px;
+        top: 80px;
         flex-direction: column;
         background: var(--white);
         width: 100%;
-        height: calc(100vh - 100px);
+        height: calc(100vh - 80px);
         text-align: center;
         transition: 0.5s;
         box-shadow: 0 10px 10px rgba(0,0,0,0.05);
         padding: 40px 0;
         z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
     }
 }
 
