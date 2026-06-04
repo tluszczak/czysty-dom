@@ -15,12 +15,15 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--cream);
     color: var(--primary-dark);
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
 h1, h2, h3, .brand-main, .section-tag {
